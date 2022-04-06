@@ -23,9 +23,7 @@ class Map
           int getPlayerColPosition();
           bool isFreeSpace(int, int);
 
-          // setters
-          void setMisfortuneCount(int);
-          void setNPC(bool);
+          // setterss
           void setPlayerRowPosition(int);
           void setPlayerColPosition(int);
 
