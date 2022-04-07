@@ -27,10 +27,6 @@ void npc::setName(string _name){
 }
 
 //IN PROGRESS
-void npc::readDialogue(string filename){
-    ifstream fin(filename);
-    if (fin.is_open()){
-        if ()
-    }
-
+int npc::readDialogue(string filename){
+    return -1;
 }

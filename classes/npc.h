@@ -1,3 +1,6 @@
+#ifndef player_H
+#define player_H
+
 #include <iostream>
 using namespace std;
 
@@ -8,13 +11,20 @@ class npc{
         string dialogue = "";
 
     public:
+        //constructors
         npc();
         npc(string, string);
+
+        //getters
         string getName();
         string getDialogue();
+
+        //setters
         void setName(string);
         void setDialogue(string);
-        void readDialogue(string);
+        int readDialogue(string);
 
 
 };
+
+#endif
