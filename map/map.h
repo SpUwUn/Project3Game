@@ -15,10 +15,7 @@ class Map
           bool habitable;
           int playerPosition[2];
           char mapData[num_rows][num_cols];
-
-          bool npc_on_map;
-          int misfortune_count;
-          int site_count;
+          
      public :
           Map();
 
@@ -32,12 +29,12 @@ class Map
           // setters
           void setPlayerRowPosition(int);
           void setPlayerColPosition(int);
-          void setNPC(bool);
+          void setNPC(int, int, int);
 
           // other
           void displayMap();
           bool executeMove(char);
-          bool spawnSite(int, int, int);
+          bool spawnLocation(int, int, int);
 };
  
 #endif

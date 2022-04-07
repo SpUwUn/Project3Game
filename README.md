@@ -13,5 +13,7 @@ Game Class - handles initialization and stuff
 
 Building Class - event class that handles interactions with stores, restaurants, etc, giving the player options (costing money) that either contribute positively or negatively to the date
 
+    will be stored in an array in main and all references to locations will be references to this array
+
 
 NPC Class - small class that handles NPC interactions, which can give the player insights on what options are good/bad
