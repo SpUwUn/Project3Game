@@ -165,7 +165,7 @@ void Map::setPlayerColPosition(int col) {
  * Parameters: row (int), col (int), type (int)
  * Return: boolean (bool)
  */
-bool Map::spawnSite(int row, int col, int type) {
+bool Map::spawnSite(int row, int col, int location {
 
     if (site_count >= num_sites) {
         return false;
@@ -179,7 +179,7 @@ bool Map::spawnSite(int row, int col, int type) {
     if (sites[site_count][0] == -1 && sites[site_count][1] == -1) {
         sites[site_count][0] = row;
         sites[site_count][1] = col;
-        sites[site_count][2] = type;
+        sites[site_count][2] = location;
         site_count++;
         mapData[row][col] = 'S';
         return true;
