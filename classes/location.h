@@ -6,7 +6,7 @@
 using namespace std; 
 
 
-class Location
+class location
 {
     private:
         string name;
@@ -17,14 +17,17 @@ class Location
         locationPosition[1] = columnPosition;
 
     public:
-        //getters
+        //constructors
+        location(int, int, string);
 
-        getPosition();
+        //getters
+        int getColPosition();
+        int getRowPosition();
         getName();
 
         //setters
-
         setPosition(int, int);
+        setName(string);
 };
  
 #endif

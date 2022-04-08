@@ -16,11 +16,12 @@ location::location(int i, int j, string str){
     name = str;
 }
 
-int[2] location::getPosition(){
-    int arr[2];
-    arr[0] = rowPosition;
-    arr[1] = columnPosition;
-    return arr;
+int location::getColPosition(){
+    return columnPosition;
+}
+
+int location::getRowPosition(){
+    return rowPosition;
 }
 
 string location::getName(){
