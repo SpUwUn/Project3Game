@@ -1,5 +1,5 @@
-#ifndef player_H
-#define player_H
+#ifndef npc_H
+#define npc_H
 
 #include <iostream>
 using namespace std;

@@ -1,5 +1,5 @@
-#ifndef player_H
-#define player_H
+#ifndef sigOther_H
+#define sigOther_H
 
 #include <iostream>
 using namespace std;
