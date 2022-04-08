@@ -10,8 +10,8 @@ using namespace std;
 int main(){
     location location1;
     assert(location1.getName() == "");
-    assert(location1.getColPosition() == \0);
-    assert(location1.getRowPosition() == \0);
+    assert(location1.getColPosition() == 0);
+    assert(location1.getRowPosition() == 0);
 
     location location2(1, 1, bar);
     assert(location2.getName() == "bar");
@@ -20,8 +20,8 @@ int main(){
 
     player player1;
     assert(player1.getMoney() == "");
-    assert(player1.getColPosition() == \0);
-    assert(player1.getRowPosition() == \0);
+    assert(player1.getColPosition() == 0);
+    assert(player1.getRowPosition() == 0);
 
     player player2(1, 1, bar);
     assert(player2.getMoney() == 100);
