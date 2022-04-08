@@ -31,7 +31,8 @@ void npc::setDialogue(string _dialogue){
 }
 
 
-//IN PROGRESS
+//reads a file, with each line having a name and dialogue, seperated by a comma
+//fills an array of npc objects
 int npc::readDialogue(string filename){
     return -1;
 }
