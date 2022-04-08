@@ -5,8 +5,8 @@
 using namespace std;
 
 location::location(){
-    rowPosition = \0;
-    columnPosition = \0;
+    rowPosition = 0;
+    columnPosition = 0;
     name = "";
 }
 
@@ -28,11 +28,11 @@ string location::getName(){
     return name;
 }
 
-location::setPosition(int i, int j){
+void location::setPosition(int i, int j){
     rowPosition = i;
     columnPosition = j;
 }
 
-location::setName(string str){
+void location::setName(string str){
     name = str;
 }
