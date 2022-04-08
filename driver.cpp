@@ -6,3 +6,12 @@
 #include "player.h"
 #include <cassert>
 using namespace std;
+
+int main(){
+
+
+
+
+
+
+}
