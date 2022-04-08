@@ -17,11 +17,11 @@ player::player(int i, int j, float f){
 }
 
 int player::getColPosition(){
-    return pos[i];
+    return pos[0];
 }
 
 int player::getRowPosition(){
-    return pos[j];
+    return pos[1];
 }
 
 float player::getMoney(){
