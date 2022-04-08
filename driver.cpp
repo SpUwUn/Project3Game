@@ -24,7 +24,7 @@ int main(){
     assert(player1.getRowPosition() == \0);
 
     player player2(1, 1, bar);
-    assert(player2.getMoney() == "bar");
+    assert(player2.getMoney() == 100);
     assert(player2.getColPosition() == 1);
     assert(player2.getRowPosition() == 1);
 }
