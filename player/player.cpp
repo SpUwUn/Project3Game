@@ -16,6 +16,30 @@ player::player(int i, int j, float f){
     money = f;
 }
 
+int player::getColPosition(){
+    return pos[i];
+}
+
+int player::getRowPosition(){
+    return pos[j];
+}
+
+float player::getMoney(){
+    return money;
+}
+
+player::setColPosition(int num){
+    pos[i] = num;
+}
+
+player::setRowPosition(int num){
+    pos[j] = num;
+}
+
+player::setMoney(float num){
+    money = num;
+}
+
 int move(char direction)
 //will add or subtract one from either cooridante to represent a movement on the grid.
 //will also check for valid inputs and check whether movement is possible
