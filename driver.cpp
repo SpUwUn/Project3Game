@@ -4,4 +4,5 @@
 #include "sigOther.h"
 #include "map.h"
 #include "player.h"
+#include <cassert>
 using namespace std;
