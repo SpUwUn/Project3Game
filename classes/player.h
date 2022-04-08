@@ -19,9 +19,9 @@ class player{
         float getMoney();
 
         //setters
-        setColPosition(int);
-        setRowPosition(int);
-        setMoney(float);
+        void setColPosition(int);
+        void setRowPosition(int);
+        void setMoney(float);
         
         //other functions
         int move(char direction);

@@ -17,26 +17,26 @@ player::player(int i, int j, float f){
 }
 
 int player::getColPosition(){
-    return pos[i];
+    return pos[0];
 }
 
 int player::getRowPosition(){
-    return pos[j];
+    return pos[1];
 }
 
 float player::getMoney(){
     return money;
 }
 
-player::setColPosition(int num){
+void player::setColPosition(int num){
     pos[i] = num;
 }
 
-player::setRowPosition(int num){
+void player::setRowPosition(int num){
     pos[j] = num;
 }
 
-player::setMoney(float num){
+void player::setMoney(float num){
     money = num;
 }
 
