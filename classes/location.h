@@ -23,11 +23,11 @@ class location
         //getters
         int getColPosition();
         int getRowPosition();
-        getName();
+        string SgetName();
 
         //setters
-        setPosition(int, int);
-        setName(string);
+        void setPosition(int, int);
+        void setName(string);
 };
  
 #endif
