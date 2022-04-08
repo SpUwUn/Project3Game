@@ -26,6 +26,11 @@ void npc::setName(string _name){
     name = _name;
 }
 
+void npc::setDialogue(string _dialogue){
+    dialogue = _dialogue;
+}
+
+
 //IN PROGRESS
 int npc::readDialogue(string filename){
     return -1;
