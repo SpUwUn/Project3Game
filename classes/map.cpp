@@ -30,12 +30,10 @@ void Map::resetMap() {
     playerPosition[0] = 0; 
     playerPosition[1] = 0;
 
-    npcPosition[0] = -1;
-    npcPosition[1] = -1;
+    npcPosition[0] = 5;
+    npcPosition[1] = 5;
 
-    npc_on_map = false;
-    misfortune_count = 0;
-    site_count = 0;
+    locationCount = 0;
 
     for (int i = 0; i < num_sites; i++) {
         sites[i][0] = -1;
@@ -48,7 +46,7 @@ void Map::resetMap() {
 
     for (int i = 0; i < num_rows; i++) {
         for (int j = 0; j < num_cols; j++) {
-            mapData[i][j] = '-';
+            mapData[i][j] = ' ';
         }
     }
 }

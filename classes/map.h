@@ -12,8 +12,9 @@ class Map
           static const int num_rows = 12;
           static const int num_cols = 12;
 
-          bool habitable;
           int playerPosition[2];
+          int npcPosition[];
+          int locationCount;
           char mapData[num_rows][num_cols];
           
      public :

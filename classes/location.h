@@ -2,6 +2,7 @@
 #define LOCATION_H
 
 #include <iostream>
+#include <vector>
 
 using namespace std; 
 
@@ -9,21 +10,23 @@ using namespace std;
 class location
 {
     private:
+        bool visited;
         string name;
-        int rowPosition;
-        int columnPosition;
-        int locationPosition[2];
-        locationPosition[0] = rowPosition;
-        locationPosition[1] = columnPosition;
+        int locationPosition[2]; //0 and 1 indeces represext x and y coord
+        string initMessage;
+        int option; //get user input
+        vector<string> outcome; //each index is the result of an option
+
 
     public:
         //constructors
-        location(int, int, string);
+        location(int, int, string, vector<string>);
 
         //getters
         int getColPosition();
         int getRowPosition();
-        string SgetName();
+        string getName();
+        string getOutcome(int);
 
         //setters
         void setPosition(int, int);
