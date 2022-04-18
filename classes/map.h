@@ -2,8 +2,6 @@
 #define MAP_H
 
 #include <iostream>
-#include "location.cpp"
-#include "npc.cpp"
 
 using namespace std; 
 
@@ -20,7 +18,6 @@ class Map
           int numLocations;
           char mapData[num_rows][num_cols];
           char locationsData[5][3]; //1st dimensions is index, 2nd is position and map char
-          npc npcs[5]; //array of npcs in which one will spawn at random each game
           
      public :
           Map();
