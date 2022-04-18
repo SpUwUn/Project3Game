@@ -1,6 +1,4 @@
 #include "map.h"
-#include "location.cpp"
-#include "npc.cpp"
 
 using namespace std; 
 
@@ -68,7 +66,7 @@ void Map::resetMap() {
  * Return: boolean (bool)
  */
 bool Map::isFreeSpace(int row, int col){
-    if (!(row >= 0 && row < num_rows && col >= 0 && col < num_cols)) {
+    /*if (!(row >= 0 && row < num_rows && col >= 0 && col < num_cols)) {
         return false;
     }
     for(int i = 0; i < numLocations; i++){
@@ -79,7 +77,7 @@ bool Map::isFreeSpace(int row, int col){
     if (row == npcPosition[0] && col == npcPosition[1]){
         return false;
     }
-    return true;
+    return true;*/
 }
 
 /*
@@ -148,9 +146,9 @@ void Map::setPlayerColPosition(int col) {
  * Parameters: row (int), col (int), type (int)
  * Return: boolean (bool)
  */
-bool Map::spawnLocation(int row, int col, int location {
+bool Map::spawnLocation(int row, int col, int location){
 
-    if (site_count >= num_sites) {
+    /*if (site_count >= num_sites) {
         return false;
     }
 
@@ -168,7 +166,7 @@ bool Map::spawnLocation(int row, int col, int location {
         return true;
     }
 
-    return false;
+    return false;*/
 }
 
 /*
@@ -182,8 +180,8 @@ bool Map::spawnLocation(int row, int col, int location {
  * Parameters: none
  * Return: boolean (bool)
  */
-bool Map::isLocation(){
-    for(int i = 0; i < num_sites; i++){
+bool Map::isLocation(int i, int j){
+    /*for(int i = 0; i < num_sites; i++){
         if (playerPosition[0] == sites[i][0] && playerPosition[1] == sites[i][1]){
             if (sites[i][2] == -1){
                 return false;
@@ -191,15 +189,15 @@ bool Map::isLocation(){
             return true;
         }
     }
-    return false;
+    return false;*/
 }
 
-bool Map::enterLocation();{
+bool Map::enterLocation(){
     //enter the location the player is currently
 }
 
 bool Map::spawnNpc(int i, int j){
-    spawn the npc at the location
+    //spawn the npc at the location
 }
 
 /*
@@ -210,11 +208,11 @@ bool Map::spawnNpc(int i, int j){
  * Parameters: none
  * Return: boolean (bool)
  */
-bool Map::isNPC(){
-    if (playerPosition[0] == npcPosition[0] && playerPosition[1] == npcPosition[1] && npc_on_map == true){
+bool Map::isNpc(int i, int j){
+    /*if (playerPosition[0] == npcPosition[0] && playerPosition[1] == npcPosition[1] && npc_on_map == true){
         return true;
     }
-    return false;
+    return false;*/
 }
 
 bool talkNpc(){
