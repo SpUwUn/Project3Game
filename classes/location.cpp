@@ -18,12 +18,13 @@ location::location(int i, int j, string str1, vector vect){
 }
 
 //getters
-int location::getColPosition(){
-    return columnPosition;
-}
 int location::getRowPosition(){
-    return rowPosition;
+    return locationPosition[0];
 }
+int location::getColPosition(){
+    return locationPosition[1];
+}
+
 string location::getName(){
     return name;
 }

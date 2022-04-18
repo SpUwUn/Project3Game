@@ -20,6 +20,7 @@ class location
 
     public:
         //constructors
+        location();
         location(int, int, string, vector<string>);
 
         //getters
