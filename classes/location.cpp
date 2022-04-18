@@ -28,13 +28,13 @@ int location::getColPosition(){
 string location::getName(){
     return name;
 }
-string getOutcome(int i);{
+string getOutcome(int i){
     return outcome.at(i);
 }
 
 void location::setPosition(int i, int j){
-    rowPosition = i;
-    columnPosition = j;
+    locationPosition[0] = i;
+    locationPosition[1] = j;
 }
 
 void location::setName(string str){

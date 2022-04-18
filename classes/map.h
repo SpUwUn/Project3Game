@@ -12,30 +12,39 @@ class Map
           static const int num_rows = 12;
           static const int num_cols = 12;
 
+
           int playerPosition[2];
-          int npcPosition[];
-          int locationCount;
+          int npcPosition[2];
+          int numLocations;
           char mapData[num_rows][num_cols];
           
      public :
           Map();
 
           void resetMap();
+          bool isFreeSpace(int, int);
+          void displayMap();
 
           // getters
           int getPlayerRowPosition();
           int getPlayerColPosition();
-          bool isFreeSpace(int, int);
 
           // setters
           void setPlayerRowPosition(int);
           void setPlayerColPosition(int);
-          void setNPC(int, int, int);
 
-          // other
-          void displayMap();
-          bool executeMove(char);
+          //location related functions
           bool spawnLocation(int, int, int);
+          bool isLocation(int, int)
+          bool enterLocation();
+
+          //npc related functions
+          bool spawnNpc(int, int);
+          bool isNpc(int, int)
+          bool talkNpc();
+
+          //player related functions
+          //bool executeMove(char);
 };
  
 #endif

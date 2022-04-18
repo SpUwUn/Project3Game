@@ -19,6 +19,3 @@ float player::getMoney(){
 void player::setMoney(float num){
     money = num;
 }
-
-void enterLocation()
-//if the player is next to/on a tile with a location then they will enter it

@@ -30,15 +30,13 @@ void Map::resetMap() {
     playerPosition[0] = 0; 
     playerPosition[1] = 0;
 
-    npcPosition[0] = 5;
-    npcPosition[1] = 5;
+    npcPosition[0] = -1;
+    npcPosition[1] = -1;
 
-    locationCount = 0;
-
-    for (int i = 0; i < num_sites; i++) {
-        sites[i][0] = -1;
-        sites[i][1] = -1;
-        sites[i][2] = -1;
+    for (int i = 0; i < numLocations i++) {
+        locationsData[i][0] = -1;
+        locationsData[i][1] = -1;
+        locationsData[i][2] = -1;
     }
 
     npcPosition[0] = -1;
@@ -49,54 +47,6 @@ void Map::resetMap() {
             mapData[i][j] = ' ';
         }
     }
-}
-
-// return player's row position
-int Map::getPlayerRowPosition() {
-    return playerPosition[0];
-}
-
-// return player's column position
-int Map::getPlayerColPosition() {
-    return playerPosition[1];
-}
-
-/*
- * Algorithm: Checks if the location is an NPC location  
- * if player position is NPC location and npc_on_map is true
- *      return true
- * return false
- * Parameters: none
- * Return: boolean (bool)
- */
-bool Map::isNPCLocation(){
-    if (playerPosition[0] == npcPosition[0] && playerPosition[1] == npcPosition[1] && npc_on_map == true){
-        return true;
-    }
-    return false;
-}
-
-/*
- * Algorithm: Checks if the location is site  
- * loop i from 0 to num_sites
- *      if player position is a site location
- *          if site type is -1
- *              return false
- *          return true  
- * return false
- * Parameters: none
- * Return: boolean (bool)
- */
-bool Map::isSiteLocation(){
-    for(int i = 0; i < num_sites; i++){
-        if (playerPosition[0] == sites[i][0] && playerPosition[1] == sites[i][1]){
-            if (sites[i][2] == -1){
-                return false;
-            }
-            return true;
-        }
-    }
-    return false;
 }
 
 /*
@@ -119,11 +69,6 @@ bool Map::isFreeSpace(int row, int col){
     if (!(row >= 0 && row < num_rows && col >= 0 && col < num_cols)) {
         return false;
     }
-    for(int i = 0; i < misfortune_count; i++){
-        if (row == misfortunes[i][0] && col == misfortunes[i][1]){
-            return false;
-        }
-    }
     for(int i = 0; i < num_sites; i++){
         if (row == sites[i][0] && col == sites[i][1]){
             return false;
@@ -133,101 +78,6 @@ bool Map::isFreeSpace(int row, int col){
         return false;
     }
     return true;
-}
-
-void Map::setNPC(bool isNpc){
-    npc_on_map = isNpc;
-}
-
-
-void Map::setPlayerRowPosition(int row) {
-    playerPosition[0] = row;
-}
-
-
-void Map::setPlayerColPosition(int col) {
-    playerPosition[1] = col;
-}
-
-/*
- * Algorithm: Create a site on the map 
- * if site_count is more than or equal to number of sites
- *      return false
- * if (row,col) is not a free space
- *      return false
- * if next row in sites matrix is -1 -1
- *      store row, col and type values in the current row of sites matrix
- *      increment site_count
- *      Set (row,col) value in mapData to 'S'
- *      return true
- * Parameters: row (int), col (int), type (int)
- * Return: boolean (bool)
- */
-bool Map::spawnSite(int row, int col, int location {
-
-    if (site_count >= num_sites) {
-        return false;
-    }
-
-    // location must be blank to spawn
-    if (!isFreeSpace(row, col)) {
-        return false;
-    }
-
-    if (sites[site_count][0] == -1 && sites[site_count][1] == -1) {
-        sites[site_count][0] = row;
-        sites[site_count][1] = col;
-        sites[site_count][2] = location;
-        site_count++;
-        mapData[row][col] = 'S';
-        return true;
-    }
-
-    return false;
-}
-
-/*
- * Algorithm: Make the player move based on the given command 
- * if user inputs w and if its not the top row of the map
- *      Move the player up by one row
- *      return true
- * if user inputs s and if its not the bottom row of the map
- *      Move the player down by one row
- *      return true
- * if user inputs a and if its not the leftmost column
- *      Move the player left by one column
- *      return true
- * if user inputs d and if its not the rightmost column
- *      Move the player right by one column
- *      return true
- * Parameters: move (char)
- * Return: boolean (bool)
- */
-bool Map::executeMove(char move){
-    // if user inputs w, move up if it is an allowed move
-    if(!(playerPosition[0] == 0) && (tolower(move) == 'w')){
-        playerPosition[0] -= 1;
-        return true; 
-    }
-    // if user inputs s, move down if it is an allowed move
-    else if(!(playerPosition[0] == (num_rows - 1))&& (tolower(move) == 's')){
-        playerPosition[0] += 1;
-        return true; 
-    }
-    // if user inputs a, move left if it is an allowed move
-    else if(!(playerPosition[1] == 0)&& (tolower(move) == 'a')){
-        playerPosition[1] -= 1;
-        return true; 
-    }
-    // if user inputs d, move right if it is an allowed move
-    else if(!(playerPosition[1] == (num_cols - 1))&& (tolower(move) == 'd')){
-        playerPosition[1] += 1;
-        return true; 
-    }
-    else{
-        cout << "Invalid Move" << endl; 
-        return false; 
-    }
 }
 
 /*
@@ -258,3 +108,156 @@ void Map::displayMap() {
         cout << endl;
     }
 }
+
+
+// return player's row position
+int Map::getPlayerRowPosition() {
+    return playerPosition[0];
+}
+
+// return player's column position
+int Map::getPlayerColPosition() {
+    return playerPosition[1];
+}
+
+
+
+
+
+void Map::setPlayerRowPosition(int row) {
+    playerPosition[0] = row;
+}
+
+void Map::setPlayerColPosition(int col) {
+    playerPosition[1] = col;
+}
+
+/*
+ * Algorithm: Create a site on the map 
+ * if site_count is more than or equal to number of sites
+ *      return false
+ * if (row,col) is not a free space
+ *      return false
+ * if next row in sites matrix is -1 -1
+ *      store row, col and type values in the current row of sites matrix
+ *      increment site_count
+ *      Set (row,col) value in mapData to 'S'
+ *      return true
+ * Parameters: row (int), col (int), type (int)
+ * Return: boolean (bool)
+ */
+bool Map::spawnLocation(int row, int col, int location {
+
+    if (site_count >= num_sites) {
+        return false;
+    }
+
+    // location must be blank to spawn
+    if (!isFreeSpace(row, col)) {
+        return false;
+    }
+
+    if (sites[site_count][0] == -1 && sites[site_count][1] == -1) {
+        sites[site_count][0] = row;
+        sites[site_count][1] = col;
+        sites[site_count][2] = location;
+        site_count++;
+        mapData[row][col] = 'S';
+        return true;
+    }
+
+    return false;
+}
+
+/*
+ * Algorithm: Checks if the space is location  
+ * loop i from 0 to num_sites
+ *      if player position is a site location
+ *          if site type is -1
+ *              return false
+ *          return true  
+ * return false
+ * Parameters: none
+ * Return: boolean (bool)
+ */
+bool Map::isLocation(){
+    for(int i = 0; i < num_sites; i++){
+        if (playerPosition[0] == sites[i][0] && playerPosition[1] == sites[i][1]){
+            if (sites[i][2] == -1){
+                return false;
+            }
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Map::enterLocation();{
+    //enter the location the player is currently
+}
+
+bool Map::spawnNpc(int i, int j){
+    spawn the npc at the location
+}
+
+/*
+ * Algorithm: Checks if the location is an NPC location  
+ * if player position is NPC location and npc_on_map is true
+ *      return true
+ * return false
+ * Parameters: none
+ * Return: boolean (bool)
+ */
+bool Map::isNPC(){
+    if (playerPosition[0] == npcPosition[0] && playerPosition[1] == npcPosition[1] && npc_on_map == true){
+        return true;
+    }
+    return false;
+}
+
+bool talkNpc();{
+    //talk with the npc on the current layer space
+}
+/*
+ * Algorithm: Make the player move based on the given command 
+ * if user inputs w and if its not the top row of the map
+ *      Move the player up by one row
+ *      return true
+ * if user inputs s and if its not the bottom row of the map
+ *      Move the player down by one row
+ *      return true
+ * if user inputs a and if its not the leftmost column
+ *      Move the player left by one column
+ *      return true
+ * if user inputs d and if its not the rightmost column
+ *      Move the player right by one column
+ *      return true
+ * Parameters: move (char)
+ * Return: boolean (bool)
+ 
+bool Map::executeMove(char move){
+    // if user inputs w, move up if it is an allowed move
+    if(!(playerPosition[0] == 0) && (tolower(move) == 'w')){
+        playerPosition[0] -= 1;
+        return true; 
+    }
+    // if user inputs s, move down if it is an allowed move
+    else if(!(playerPosition[0] == (num_rows - 1))&& (tolower(move) == 's')){
+        playerPosition[0] += 1;
+        return true; 
+    }
+    // if user inputs a, move left if it is an allowed move
+    else if(!(playerPosition[1] == 0)&& (tolower(move) == 'a')){
+        playerPosition[1] -= 1;
+        return true; 
+    }
+    // if user inputs d, move right if it is an allowed move
+    else if(!(playerPosition[1] == (num_cols - 1))&& (tolower(move) == 'd')){
+        playerPosition[1] += 1;
+        return true; 
+    }
+    else{
+        cout << "Invalid Move" << endl; 
+        return false; 
+    }
+}*/
