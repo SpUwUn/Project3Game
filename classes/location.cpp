@@ -5,14 +5,14 @@
 using namespace std;
 
 location::location(){
-    rowPosition = -1;
-    columnPosition = -1;
+    locationPosition[0] = -1;
+    locationPosition[1] = -1;
     name = "";
 }
 
-location::location(int i, int j, string str1, vector vect){
-    rowPosition = i;
-    columnPosition = j;
+location::location(int i, int j, string str, vector<string> vect){
+    locationPosition[0] = i;
+    locationPosition[1] = j;
     name = str;
     outcome = vect;
 }
@@ -28,7 +28,7 @@ int location::getColPosition(){
 string location::getName(){
     return name;
 }
-string getOutcome(int i){
+string location::getOutcome(int i){
     return outcome.at(i);
 }
 
