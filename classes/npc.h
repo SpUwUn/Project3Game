@@ -9,6 +9,7 @@ class npc{
     private:
         string name = "";
         string dialogue = "";
+        int npcCount = 0;
 
     public:
         //constructors
