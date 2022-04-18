@@ -68,7 +68,7 @@ void npc::setDialogue(string _dialogue){
 
 //reads a file, with each line having a name and dialogue, seperated by a comma
 //fills an array of npc objects
-int npc::readDialogue(string filename){
+int npc::readNPC(string filename){
     int readCount = 0;
     string tempArr[2];
     ifstream fin(filename);

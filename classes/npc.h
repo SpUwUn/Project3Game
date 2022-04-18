@@ -23,7 +23,7 @@ class npc{
         //setters
         void setName(string);
         void setDialogue(string);
-        int readDialogue(string);
+        int readNPC(string);
 
 
 };
