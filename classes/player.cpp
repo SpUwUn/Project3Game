@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "location.h"
+#include "player.h"
 using namespace std;
 
 player::player(){

@@ -1,4 +1,6 @@
-#include "Map.h"
+#include "map.h"
+#include "location.cpp"
+#include "npc.cpp"
 
 using namespace std; 
 
@@ -33,7 +35,7 @@ void Map::resetMap() {
     npcPosition[0] = -1;
     npcPosition[1] = -1;
 
-    for (int i = 0; i < numLocations i++) {
+    for (int i = 0; i < numLocations; i++) {
         locationsData[i][0] = -1;
         locationsData[i][1] = -1;
         locationsData[i][2] = -1;
@@ -69,8 +71,8 @@ bool Map::isFreeSpace(int row, int col){
     if (!(row >= 0 && row < num_rows && col >= 0 && col < num_cols)) {
         return false;
     }
-    for(int i = 0; i < num_sites; i++){
-        if (row == sites[i][0] && col == sites[i][1]){
+    for(int i = 0; i < numLocations; i++){
+        if (row == locations[i][0] && col == locations[i][1]){
             return false;
         }
     }
@@ -215,7 +217,7 @@ bool Map::isNPC(){
     return false;
 }
 
-bool talkNpc();{
+bool talkNpc(){
     //talk with the npc on the current layer space
 }
 /*
