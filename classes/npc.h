@@ -19,10 +19,13 @@ class npc{
         //getters
         string getName();
         string getDialogue();
+        int getNpcCount();
 
         //setters
         void setName(string);
         void setDialogue(string);
+        void setNpcCount(int);
+        
         int readNPC(string);
 
 
