@@ -9,9 +9,7 @@ location::location(){
     name = "";
 }
 
-location::location(int i, int j, string str, vector<string> vect){
-    locationPosition[0] = i;
-    locationPosition[1] = j;
+location::location(string str, vector<string> vect){
     name = str;
     outcome = vect;
 }

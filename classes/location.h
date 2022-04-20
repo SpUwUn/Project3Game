@@ -21,7 +21,7 @@ class location
     public:
         //constructors
         location();
-        location(int, int, string, vector<string>);
+        location(string, vector<string>);
 
         //getters
         int getColPosition();

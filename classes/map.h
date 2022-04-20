@@ -23,29 +23,11 @@ class Map
           Map();
 
           void resetMap();
-          bool isFreeSpace(int, int);
           void displayMap();
 
-          // getters
-          int getPlayerRowPosition();
-          int getPlayerColPosition();
-
           // setters
-          void setPlayerRowPosition(int);
-          void setPlayerColPosition(int);
-
-          //location related functions
-          bool spawnLocation(int, int, int);
-          bool isLocation(int, int);
-          bool enterLocation();
-
-          //npc related functions
-          bool spawnNpc(int, int);
-          bool isNpc(int, int);
-          bool talkNpc();
-
-          //player related functions
-          //bool executeMove(char);
+          void setMapData(int, int, char);
+       
 };
  
 #endif
