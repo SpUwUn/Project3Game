@@ -15,7 +15,13 @@ player::player(float f){
 float player::getMoney(){
     return money;
 }
+float player::getScore(){
+    return score;
+}
 
 void player::setMoney(float num){
     money = num;
+}
+void player::setScore(float num){
+    score = num;
 }
