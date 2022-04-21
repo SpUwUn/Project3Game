@@ -43,7 +43,7 @@ int main(){
     locations[6] = iceCream;
     locations[7] = theatre;
 
-    //initialize npc's
+    //initialize npcs
     npc npcs[8];
     npc Stali("", "");
     npc Yasmeen("", "");
@@ -62,5 +62,142 @@ int main(){
     npcs[6] = Valeria;
     npcs[7] = Romulo;
 
-    //
+    //switch statement with 8 nested switch statements for the different locations*
+    int playerOption;
+    int playerOption2;
+    while (playerOption != 0){
+        cout << "menu" << endl;
+        cin >> playerOption;
+        switch (playerOption){
+            case 0:
+                cout << "Thank you for playing. Your score is " << /*score variable*/ << ".";
+                break;
+            //location 1
+            case 1:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 2
+            case 2:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 3
+            case 3:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 4
+            case 4:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 5
+            case 5:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 6
+            case 6:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 7
+            case 7:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //location 8
+            case 8:
+                cin >> playerOption2;
+                switch (playerOption2){
+                    case 1:
+                
+                        break;
+                    case 2:
+                
+                        break;
+                    case 3:
+                
+                        break;
+                }
+                break;
+            //npc
+            case 9:
+                cout << "text blurb" << endl;
+                        break;
+                }
+                break;
+        }
+    }
 }
