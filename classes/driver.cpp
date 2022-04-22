@@ -6,7 +6,34 @@
 #include "player.h"
 #include <cassert>
 #include <vector>
+#include <fstream>
 using namespace std;
+
+int split (string inputString, char separator, string arr[], int size){
+    string intermediary = "";
+    int splitTracker = 0;
+    for (int i=0; i < inputString.length(); i++){
+        if (inputString[i] != separator){
+            intermediary = intermediary+inputString[i];
+            
+        }
+        else {
+            arr[splitTracker] = intermediary;
+            intermediary = "";
+            splitTracker++;
+        }
+        if (splitTracker == size){
+            return -1;
+        }
+        if (i == inputString.length()-1){
+            arr[splitTracker] = intermediary;
+            intermediary = "";
+            splitTracker++;
+        }
+    }
+    
+    return splitTracker;
+}
 
 int main(){
     //initialize and display map
@@ -51,7 +78,7 @@ int main(){
     npc npcs[8];
     npc Stali("Oleg", "I've heard that Brandon's Bratwursts' relish is made from fake pickles.");
     npc Yasmeen("Yasmeen", "I absolutely LOVE the ferris wheel.");
-    npc Olwen("Olwen", "That Abe Lincoln paint at the gallery is so ugly its almost good!");
+    npc Olwen("Olwen", "That Abe Lincoln painting at the gallery is so ugly its almost good!");
     npc Oleg("Oleg", "Rumor has that there is an ancient tome of knowledge at the bookstore, the kind of knowledge you can only get on a certain streaming site.");
     npc Musad("Musad", "Your date looks like someone who would love some bacon.");
     npc Shayne("Shayne", "I was just on Lover's Pass, and let me say, it was an experience.");
@@ -67,7 +94,7 @@ int main(){
     npcs[7] = Romulo;
 
     //insert code to choose random npc
-    int randNpc = rand() % 7;
+    int randNpc = rand() % 8;
 
     //switch statement with 8 nested switch statements for the different locations*
     int playerOption;
@@ -81,18 +108,38 @@ int main(){
     bool location7Complete = false;
     bool location8Complete = false;
 
-    vector<int> vect = {90,3,6,76,3,5,6,7,15,12};
+
+    ifstream fin("scores.txt");
+    string line;
+    string scores[1000];
+    string names[1000];
+    string tempArr[2];
+    vector<int> vect;
+    for (int i = 0; i < 1000; i++){
+        if(stoi(scores[i]) > 0){
+            vect.push_back(stoi(scores[i]));
+        }
+    }
 
     int temp;
+
 
     while (playerOption != 0){
         cout << "menu" << endl;
         cin >> playerOption;
         switch (playerOption){
             //finish date
-            case 0:{
+            case 0:
                 cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
                 cout << "This is the current leaderboard:" << endl;
+                while(!fin.eof()){
+                    getline(fin, line);
+                    split(line, ',', tempArr, 1000);
+                    int i = 0;
+                    scores[i] = tempArr[0];
+                    names[i] = tempArr[1];
+                    vect.push_back(stoi(scores[i]));
+                }
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
                         if(vect[j] < vect[i]) {
@@ -106,7 +153,7 @@ int main(){
                     cout << vect.at(i) << endl;
                 }
                 break;
-            }
+            
             //location 1
             case 1:
                 if (location1Complete == false){
