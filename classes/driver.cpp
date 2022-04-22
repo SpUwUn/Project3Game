@@ -122,6 +122,7 @@ int main(){
     }
 
     int temp;
+    string tempStr;
 
 
     while (playerOption != 0){
@@ -138,7 +139,8 @@ int main(){
                     int i = 0;
                     scores[i] = tempArr[0];
                     names[i] = tempArr[1];
-                    vect.push_back(stoi(scores[i]));
+                    tempStr = names[i];
+                    vect.push_back(stoi(tempStr));
                 }
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
