@@ -115,7 +115,7 @@ int main(){
     string scores[1000];
     string names[1000];
     string tempArr[2];
-    vector<int> vect;
+    vector<float> vect;
     
 
     int temp;
@@ -139,9 +139,8 @@ int main(){
             //finish date
             case 0:
                 cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
-                cout << "What is your name?" << endl;
-                cin >> names[i+1];
-                scores[i+1] = to_string(player1.getScore());
+                //cout << "What is your name?" << endl;
+                //cin >> names[i+1];
                 cout << "This is the current leaderboard:" << endl;
                 while(!fin.eof()){
                     getline(fin, line);
@@ -152,12 +151,14 @@ int main(){
                     vect.push_back(stoi(tempStr));
                     i++;
                 }
-                split(scores[i+1],'.',tempArr, 2);
-                scores[i+1] = tempArr[0];
+                scores[i+1] = to_string(player1.getScore());
+                vect.push_back(player1.getScore());
+                //split(scores[i+1],'.',tempArr, 2);
+                //scores[i+1] = tempArr[0];
                 //cout << '|' << i << '|';
                 //cout << "\'" << scores[i+1] << "\'"  << endl << endl;
                 //cout << "\'" << player1.getScore() << "\'"  << endl << endl;
-                vect.push_back(stoi(scores[i+1]));
+                //vect.push_back(stoi(scores[i+1]));
 
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
@@ -168,8 +169,9 @@ int main(){
                         }
                     }
                 }
+                //cout << player1.getScore() << " " << names[i+1];
                 for(int i = 0; i < vect.size(); i++){
-                    cout << vect.at(i) << " " << names[i] << endl;
+                    cout << vect.at(i) << endl;
                 }
                 break;
             

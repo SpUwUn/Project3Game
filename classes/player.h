@@ -7,7 +7,7 @@ using namespace std;
 class player{
     private:
         float money;
-        float score = 1.00005;
+        float score = 0;
 
     public:
         player();
