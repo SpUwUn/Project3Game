@@ -26,7 +26,7 @@ class npc{
         void setDialogue(string);
         void setNpcCount(int);
         
-        int readNPC(string);
+        // int readNPC(string);
 
 
 };
