@@ -39,16 +39,16 @@ int main(){
     //initialize and display map
     Map pearlStreet;
     for(int i = 0; i < 12; i++){
-        pearlStreet.setMapData(0, i, ' ');
+        pearlStreet.setMapData(0, i, '=');
     }
     for(int i = 0; i < 12; i++){
-        pearlStreet.setMapData(11, i, ' ');
+        pearlStreet.setMapData(11, i, '=');
     }
     for(int i = 0; i < 12; i++){
-        pearlStreet.setMapData(i, 0, ' ');
+        pearlStreet.setMapData(i, 0, '|');
     }
     for(int i = 0; i < 12; i++){
-        pearlStreet.setMapData(i, 11, ' ');
+        pearlStreet.setMapData(i, 11, '|');
     }
     pearlStreet.displayMap();
     
@@ -97,7 +97,7 @@ int main(){
     int randNpc = rand() % 8;
 
     //switch statement with 8 nested switch statements for the different locations*
-    int playerOption;
+    int playerOption = -1;
     int playerOption2;
     bool location1Complete = false;
     bool location2Complete = false;
@@ -115,15 +115,11 @@ int main(){
     string names[1000];
     string tempArr[2];
     vector<int> vect;
-    for (int i = 0; i < 1000; i++){
-        if(stoi(scores[i]) > 0){
-            vect.push_back(stoi(scores[i]));
-        }
-    }
+    
 
     int temp;
     string tempStr;
-
+    int i = 0;
 
     while (playerOption != 0){
         cout << "Options:" << endl
@@ -146,7 +142,6 @@ int main(){
                 while(!fin.eof()){
                     getline(fin, line);
                     split(line, ',', tempArr, 1000);
-                    int i = 0;
                     scores[i] = tempArr[0];
                     names[i] = tempArr[1];
                     tempStr = scores[i];
@@ -154,7 +149,7 @@ int main(){
                 }
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
-                        if(vect[j] < vect[i]) {
+                        if(vect[j] > vect[i]) {
                             temp = vect[i];
                             vect[i] = vect[j];
                             vect[j] = temp;
@@ -162,7 +157,7 @@ int main(){
                     }
                 }
                 for(int i = 0; i < vect.size(); i++){
-                    cout << vect.at(i) << endl;
+                    cout << vect.at(i) << " " << names[i] << endl;
                 }
                 break;
             
@@ -224,6 +219,7 @@ int main(){
                 else{
                     cout << "They seem to be closed." << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 2
             case 2:
                 if (location2Complete == false){
@@ -282,6 +278,7 @@ int main(){
                 else{
                     cout << "They seem to be closed for the night" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 3
             case 3:
                 if (location3Complete == false){
@@ -340,6 +337,7 @@ int main(){
                 else{
                     cout << "It's closed" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 4
             case 4:
                 if (location4Complete == false){
@@ -398,6 +396,7 @@ int main(){
                 else{
                     cout << "it's closed" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 5
             case 5:
                 if (location5Complete == false){
@@ -456,6 +455,7 @@ int main(){
                 else{
                     cout << "It's closed" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 6
             case 6:
                 if (location6Complete == false){
@@ -515,6 +515,7 @@ int main(){
                 else{
                     cout << "The trail seems closed now." << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 7
             case 7:
                 if (location7Complete == false){
@@ -573,6 +574,7 @@ int main(){
                 else{
                     cout << "text blurb" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //location 8
             case 8:
                 if (location8Complete == false){
@@ -631,6 +633,7 @@ int main(){
                 else{
                     cout << "It's closed" << endl; //you cant go to a location you have already been or something like that
                 }
+                break;
             //npc
             case 9:
                 cout << npcs[randNpc].getDialogue() << endl;

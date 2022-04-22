@@ -24,13 +24,13 @@ void Map::resetMap() {
         }
     }
     mapData[1][1]='B';
-    mapData[1][6]='C';
-    mapData[3][3]='G';
-    mapData[3][7]='S';
+    mapData[1][7]='C';
+    mapData[4][3]='G';
+    mapData[3][10]='S';
     mapData[5][1]='A';
-    mapData[5][5]='C';
-    mapData[7][5]='I';
-    mapData[7][2]='T';
+    mapData[7][6]='C';
+    mapData[7][9]='I';
+    mapData[10][2]='T';
 
 }
 
