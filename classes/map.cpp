@@ -17,11 +17,21 @@ Map::Map()
  * Return: nothing (void)
  */
 void Map::resetMap() {
+    cout << "Map: B=Brats, C=Carnival, G=Gallery, S=Bookstore, A=Arby's, C=Creek, I=Creamery, T=Theater" << endl;
     for (int i = 0; i < num_rows; i++) {
         for (int j = 0; j < num_cols; j++) {
             mapData[i][j] = ' ';
         }
     }
+    mapData[1][1]='B';
+    mapData[1][6]='C';
+    mapData[3][3]='G';
+    mapData[3][7]='S';
+    mapData[5][1]='A';
+    mapData[5][5]='C';
+    mapData[7][5]='I';
+    mapData[7][2]='T';
+
 }
 
 /*

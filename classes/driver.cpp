@@ -5,7 +5,35 @@
 #include "map.h"
 #include "player.h"
 #include <cassert>
+#include <vector>
+#include <fstream>
 using namespace std;
+
+int split (string inputString, char separator, string arr[], int size){
+    string intermediary = "";
+    int splitTracker = 0;
+    for (int i=0; i < inputString.length(); i++){
+        if (inputString[i] != separator){
+            intermediary = intermediary+inputString[i];
+            
+        }
+        else {
+            arr[splitTracker] = intermediary;
+            intermediary = "";
+            splitTracker++;
+        }
+        if (splitTracker == size){
+            return -1;
+        }
+        if (i == inputString.length()-1){
+            arr[splitTracker] = intermediary;
+            intermediary = "";
+            splitTracker++;
+        }
+    }
+    
+    return splitTracker;
+}
 
 int main(){
     //initialize and display map
@@ -48,14 +76,14 @@ int main(){
 
     //initialize npcs
     npc npcs[8];
-    npc Stali("", "");
-    npc Yasmeen("", "");
-    npc Olwen("", "");
-    npc Oleg("", "");
-    npc Musad("", "");
-    npc Shayne("", "");
-    npc Valeria("", "");
-    npc Romulo("", "");
+    npc Stali("Oleg", "I've heard that Brandon's Bratwursts' relish is made from fake pickles.");
+    npc Yasmeen("Yasmeen", "I absolutely LOVE the ferris wheel.");
+    npc Olwen("Olwen", "That Abe Lincoln painting at the gallery is so ugly its almost good!");
+    npc Oleg("Oleg", "Rumor has that there is an ancient tome of knowledge at the bookstore, the kind of knowledge you can only get on a certain streaming site.");
+    npc Musad("Musad", "Your date looks like someone who would love some bacon.");
+    npc Shayne("Shayne", "I was just on Lover's Pass, and let me say, it was an experience.");
+    npc Valeria("Valeria", "If you love hotdogs, then you have to go to Chilled Rock Creamery.");
+    npc Romulo("Romulo", "There is not a lot of rock in the Boulder schoolhouse, that's for sure.");
     npcs[0] = Stali;
     npcs[1] = Yasmeen;
     npcs[2] = Olwen;
@@ -66,10 +94,7 @@ int main(){
     npcs[7] = Romulo;
 
     //insert code to choose random npc
-    //
-    //
-    //
-    //
+    int randNpc = rand() % 8;
 
     //switch statement with 8 nested switch statements for the different locations*
     int playerOption;
@@ -82,6 +107,23 @@ int main(){
     bool location6Complete = false;
     bool location7Complete = false;
     bool location8Complete = false;
+
+
+    ifstream fin("scores.txt");
+    string line;
+    string scores[1000];
+    string names[1000];
+    string tempArr[2];
+    vector<int> vect;
+    for (int i = 0; i < 1000; i++){
+        if(stoi(scores[i]) > 0){
+            vect.push_back(stoi(scores[i]));
+        }
+    }
+
+    int temp;
+
+
     while (playerOption != 0){
         cout << "Options:" << endl
             << "0. End Game" << endl <<
@@ -96,9 +138,32 @@ int main(){
                 "9. Talk to passerby" << endl;
         cin >> playerOption;
         switch (playerOption){
+            //finish date
             case 0:
-                cout << "Thank you for playing. Your score is " << player1.getScore() << ".";
+                cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
+                cout << "This is the current leaderboard:" << endl;
+                while(!fin.eof()){
+                    getline(fin, line);
+                    split(line, ',', tempArr, 1000);
+                    int i = 0;
+                    scores[i] = tempArr[0];
+                    names[i] = tempArr[1];
+                    vect.push_back(stoi(scores[i]));
+                }
+                for(int i = 0; i < vect.size(); i++){
+                    for(int j = i + 1; j < vect.size(); j++){
+                        if(vect[j] < vect[i]) {
+                            temp = vect[i];
+                            vect[i] = vect[j];
+                            vect[j] = temp;
+                        }
+                    }
+                }
+                for(int i = 0; i < vect.size(); i++){
+                    cout << vect.at(i) << endl;
+                }
                 break;
+            
             //location 1
             case 1:
                 if (location1Complete == false){
@@ -562,11 +627,11 @@ int main(){
                     }
                 }
                 else{
-                    cout << "text blurb" << endl; //you cant go to a location you have already been or something like that
+                    cout << "It's closed" << endl; //you cant go to a location you have already been or something like that
                 }
             //npc
             case 9:
-                cout << "It's closed" << endl;
+                cout << npcs[randNpc].getDialogue() << endl;
                 break;
             default:
                 cout << "Please enter a valid option." << endl;
