@@ -152,6 +152,11 @@ int main(){
                     vect.push_back(stoi(tempStr));
                     i++;
                 }
+                split(scores[i+1],'.',tempArr, 2);
+                scores[i+1] = tempArr[0];
+                //cout << '|' << i << '|';
+                //cout << "\'" << scores[i+1] << "\'"  << endl << endl;
+                //cout << "\'" << player1.getScore() << "\'"  << endl << endl;
                 vect.push_back(stoi(scores[i+1]));
 
                 for(int i = 0; i < vect.size(); i++){
