@@ -121,6 +121,32 @@ int main(){
     int temp;
     string tempStr;
     int i = 0;
+    
+    sigOther date;
+    string tempDate = "";
+    // hair,eyes,gender,height,complexion;
+    cout << "Describe to us the characteristics of your date!" << endl <<
+    "Hair type:" << endl;
+    cin >> tempDate;
+    date.setHair(tempDate);
+    
+    cout << "eye color" << endl;
+    cin >> tempDate;
+    date.setEyes(tempDate);
+
+    cout << "Gender" << endl;
+    cin >> tempDate;
+    date.setGender(tempDate);
+
+    cout << "Height" << endl;
+    cin >> tempDate;
+    date.setHeight(tempDate);
+
+    cout << "Complextion" << endl;
+    cin >> tempDate;
+    date.setComplexion(tempDate);
+
+    cout << "Congradulations! You're ready to start your date!" << endl;
 
     while (playerOption != 0){
         cout << "Options:" << endl
@@ -133,7 +159,9 @@ int main(){
                 "6. Creek Walking path" << endl <<
                 "7. ChilledRock Creamery" << endl <<
                 "8. Boulder Theater" << endl <<
-                "9. Talk to passerby" << endl;
+                "9. Talk to passerby" << endl <<
+                "10. Look at your date" << endl;
+
         cin >> playerOption;
         switch (playerOption){
             //finish date
@@ -651,6 +679,15 @@ int main(){
             //npc
             case 9:
                 cout << npcs[randNpc].getDialogue() << endl;
+                break;
+            case 10:
+                // hair,eyes,gender,height,complexion;
+                cout << "You take a look at your date" << endl;
+                cout << "Hair: " << date.getHair() << endl;
+                cout << "Eyes: " << date.getEyes() << endl;
+                cout << "Gender: " << date.getGender() << endl;
+                cout << "Height: " << date.getHeight() << endl;
+                cout << "Complextion: " << date.getComplexion() << endl;
                 break;
             default:
                 cout << "Please enter a valid option." << endl;

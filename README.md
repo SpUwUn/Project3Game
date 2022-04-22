@@ -17,3 +17,8 @@ Building Class - event class that handles interactions with stores, restaurants,
 
 
 NPC Class - small class that handles NPC interactions, which can give the player insights on what options are good/bad
+
+
+.3
+.6
+1
