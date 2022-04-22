@@ -139,7 +139,7 @@ int main(){
                     int i = 0;
                     scores[i] = tempArr[0];
                     names[i] = tempArr[1];
-                    tempStr = names[i];
+                    tempStr = scores[i];
                     vect.push_back(stoi(tempStr));
                 }
                 for(int i = 0; i < vect.size(); i++){
