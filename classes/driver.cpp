@@ -5,6 +5,7 @@
 #include "map.h"
 #include "player.h"
 #include <cassert>
+#include <vector>
 using namespace std;
 
 int main(){
@@ -48,14 +49,14 @@ int main(){
 
     //initialize npcs
     npc npcs[8];
-    npc Stali("", "");
-    npc Yasmeen("", "");
-    npc Olwen("", "");
-    npc Oleg("", "");
-    npc Musad("", "");
-    npc Shayne("", "");
-    npc Valeria("", "");
-    npc Romulo("", "");
+    npc Stali("Oleg", "I've heard that Brandon's Bratwursts' relish is made from fake pickles.");
+    npc Yasmeen("Yasmeen", "I absolutely LOVE the ferris wheel.");
+    npc Olwen("Olwen", "That Abe Lincoln paint at the gallery is so ugly its almost good!");
+    npc Oleg("Oleg", "Rumor has that there is an ancient tome of knowledge at the bookstore, the kind of knowledge you can only get on a certain streaming site.");
+    npc Musad("Musad", "Your date looks like someone who would love some bacon.");
+    npc Shayne("Shayne", "I was just on Lover's Pass, and let me say, it was an experience.");
+    npc Valeria("Valeria", "If you love hotdogs, then you have to go to Chilled Rock Creamery.");
+    npc Romulo("Romulo", "There is not a lot of rock in the Boulder schoolhouse, that's for sure.");
     npcs[0] = Stali;
     npcs[1] = Yasmeen;
     npcs[2] = Olwen;
@@ -66,10 +67,7 @@ int main(){
     npcs[7] = Romulo;
 
     //insert code to choose random npc
-    //
-    //
-    //
-    //
+    int randNpc = rand() % 7;
 
     //switch statement with 8 nested switch statements for the different locations*
     int playerOption;
@@ -82,13 +80,33 @@ int main(){
     bool location6Complete = false;
     bool location7Complete = false;
     bool location8Complete = false;
+
+    vector<int> vect = {90,3,6,76,3,5,6,7,15,12};
+
+    int temp;
+
     while (playerOption != 0){
         cout << "menu" << endl;
         cin >> playerOption;
         switch (playerOption){
-            case 0:
-                cout << "Thank you for playing. Your score is " << player1.getScore() << ".";
+            //finish date
+            case 0:{
+                cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
+                cout << "This is the current leaderboard:" << endl;
+                for(int i = 0; i < vect.size(); i++){
+                    for(int j = i + 1; j < vect.size(); j++){
+                        if(vect[j] < vect[i]) {
+                            temp = vect[i];
+                            vect[i] = vect[j];
+                            vect[j] = temp;
+                        }
+                    }
+                }
+                for(int i = 0; i < vect.size(); i++){
+                    cout << vect.at(i) << endl;
+                }
                 break;
+            }
             //location 1
             case 1:
                 if (location1Complete == false){
@@ -523,7 +541,7 @@ int main(){
                 }
             //npc
             case 9:
-                cout << "text blurb" << endl;
+                cout << npcs[randNpc].getDialogue() << endl;
                 break;
             default:
                 cout << "Please enter a valid option." << endl;
