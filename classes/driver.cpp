@@ -138,6 +138,9 @@ int main(){
             //finish date
             case 0:
                 cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
+                cout << "What is your name?" << endl;
+                cin >> names[i+1];
+                scores[i+1] = player1.getScore();
                 cout << "This is the current leaderboard:" << endl;
                 while(!fin.eof()){
                     getline(fin, line);
@@ -148,6 +151,8 @@ int main(){
                     vect.push_back(stoi(tempStr));
                     i++;
                 }
+                vect.push_back(stoi(scores[i+1]));
+
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
                         if(vect[j] > vect[i]) {
