@@ -7,6 +7,7 @@
 #include <cassert>
 #include <vector>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int split (string inputString, char separator, string arr[], int size){
@@ -140,7 +141,7 @@ int main(){
                 cout << "Thank you for playing. Your score is " << player1.getScore() << "." << endl;
                 cout << "What is your name?" << endl;
                 cin >> names[i+1];
-                scores[i+1] = player1.getScore();
+                scores[i+1] = to_string(player1.getScore());
                 cout << "This is the current leaderboard:" << endl;
                 while(!fin.eof()){
                     getline(fin, line);
