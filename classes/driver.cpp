@@ -146,6 +146,7 @@ int main(){
                     names[i] = tempArr[1];
                     tempStr = scores[i];
                     vect.push_back(stoi(tempStr));
+                    i++;
                 }
                 for(int i = 0; i < vect.size(); i++){
                     for(int j = i + 1; j < vect.size(); j++){
@@ -179,7 +180,7 @@ int main(){
                                 else{
                                     cout << "You both take a bite out of the hotdog, and it’s… decent! You feel ketchup doesn’t exactly enhance the professionally made bratwurst, but it doesn’t hurt it either." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location1Complete = true;
                                 }
                                 break;
@@ -190,7 +191,7 @@ int main(){
                                 else{
                                     cout << "You both take a bite out of the hotdog, and instantly melt on the floor. It’s dijon mustard. That hotdog has got to be one of the best hot dogs you’ve ever had." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location1Complete = true;
                                 }
                                 break;
@@ -201,7 +202,7 @@ int main(){
                                 else{
                                     cout << "You order a bratwurst with relish, excited for the signature tangy taste of dill relish blended perfectly with the delicious, well cooked bratwurst. You go in for a bite, and it tastes… sweet? To your horror, you realize it was sweet relish! You still can’t comprehend how sweet relish is offered anywhere, but all you know is you and your date’s bratwurst is ruined. Way to go, you." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location1Complete = true;
                                 }
                                 break;
@@ -238,7 +239,7 @@ int main(){
                                 else{
                                     cout << "You decide to go on the ferris wheel. It’s not the most exciting ride you could go on, but you figured it’d be a nice break to the busy night. You chill, talk, and enjoy the city views from your new elevated position. Y’all came off the ride feeling refreshed and satisfied." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location2Complete = true;
                                 }
                                 break;
@@ -249,7 +250,7 @@ int main(){
                                 else{
                                     cout << "You decide to chose the Roller Coaster, because WHY WOULDN’T YOU?! Roller Coasters are always the best part of carnivals! Your date, however, didn’t seem to be feeling it. In your rush to hop on the ride, you forgot to ask if your date even liked roller coasters. Oop" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location2Complete = true;
                                 }
                                 break;
@@ -260,7 +261,7 @@ int main(){
                                 else{
                                     cout << "You decide on the teacups, since you feeln they’re an underrated ride in the general attraction catalog. You both hop on the ride, and have a pretty good time. While you’re not sure if it was worth the price of admission, you both had a " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location2Complete = true;
                                 }
                                 break;
@@ -297,7 +298,7 @@ int main(){
                                 else{
                                     cout << "You chose the Audibon print. You would have never expected to find an actual Audibon print on Pearl Street of all places, but at that price you have no complaints. You escape the confines of the art gallery, and present the print to your date. They smile and gladly accept the gift, but you can tell they’re not as thrilled as they’re trying to come off. You later learn that high anatomical detail in paintings puts them off, and that they prefer more abstract works. Oh well, at least you think it’s a good piece." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location3Complete = true;
                                 }
                                 break;
@@ -308,7 +309,7 @@ int main(){
                                 else{
                                     cout << "You chose the watercolor painting. You feel the warm, cozy vibe the painting gives would really match the atmosphere of your date’s room. You escape the confines of the art gallery, and present the print to your date. They shriek in delight, and they tell you they absolutely love it! You even get a hug out of it. " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location3Complete = true;
                                 }
                                 break;
@@ -319,7 +320,7 @@ int main(){
                                 else{
                                     cout << "You choose the abstract caricature piece. It’s a little off-putting, but who doesn’t love Abraham Lincoln? You escape the confines of the art gallery, and present the print to your date. Their reaction is… surprise! But not the good kind. You knew they like abstract, but this seems too abstract for their liking. It was also apparently a caricature of Johnny Depp. " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location3Complete = true;
                                 }
                                 break;
@@ -356,7 +357,7 @@ int main(){
                                 else{
                                     cout << "Once this book was graced upon your eyes, you knew it was the one. You’ve heard of this mythical internet celebrity, but you had no idea he was an author! Who knows what wisdom you can surmise from reading this book. Once you order a copy, you go and present the book to your date. Your date is a little tad taken aback, but ends up being caught up in your enthusiasm. You both have a lovely time reading through it together. " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location4Complete = true;
                                 }
                                 break;
@@ -367,7 +368,7 @@ int main(){
                                 else{
                                     cout << "You end up going with the road trip book. The only thing better than a roadtrip, you think to yourself, are armchair roadtrips! Once you order a copy, you go and present the book to your date. Your date is initially thrilled, but once you both start reading you realize it’s more of a roadside attraction advertisement than actual roadtrip stuff. You both enjoy it nonetheless, but y’all don’t read for very long. " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location4Complete = true;
                                 }
                                 break;
@@ -378,7 +379,7 @@ int main(){
                                 else{
                                     cout << "You end up going with the Architecture book for… some reason. Now that you’re thinking about it, you’re not too sure why you bought it, but it’s in a bag, you’ve been handed a receipt, and you’ve left the counter. You put on a smile and present the book to your date, but their reaction is about what you’d expect. Nice going you." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location4Complete = true;
                                 }
                                 break;
@@ -415,7 +416,7 @@ int main(){
                                 else{
                                     cout << "You choose to indulge yourself with the Roast Beef Sandwich. It did occur to you how strange the concept was, but you were confident in the house chefs to present you both with a satisfying meal. Sadly, when delivered, it was indeed a (quite large) slice of roast beef between some buns. It was the first time you had to actually consider eating a sandwich with a fork and knife. You left unsatisfied, confused, and scared." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location5Complete = true;
                                 }
                                 break;
@@ -426,7 +427,7 @@ int main(){
                                 else{
                                     cout << "You choose to indulge yourself with the Pulled Pork Sandwich. You felt confident in the choice, but once delivered, it seems your expectations were a bit too high. It wasn’t bad at all, infact it was really good all things considered, but regardless you felt a tad let down. Was this really worth the price of admission?" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location5Complete = true;
                                 }
                                 break;
@@ -437,7 +438,7 @@ int main(){
                                 else{
                                     cout << "You choose to indulge yourself with the BLT Sandwich. After you made your order, your date pointed out that it was marked as the crowd favorite. Your expectations were already high, but that was nothing compared to when the sandwich was served. It was a masterful combination of savory meats, flavorful seasoning, and delicious vegetables. That sandwich was so good you asked for another. In fact, you asked for so many more BLT’s your date had to physically drag you out of the restaurant. If that’s not the sign of a good meal, I don’t know what is." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location5Complete = true;
                                 }
                                 break;
@@ -475,7 +476,7 @@ int main(){
                                 else{
                                     cout << "You choose to go down the path towards Fool’s Creek. As you approach the creek, you’re taken aback how pristine it is. The creek is clear, there’s no trash in sight, you’re both completely alone, and most of all it’s quiet. You have a lovely time walking along the creek with your date." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location6Complete = true;
                                 }
                                 break;
@@ -486,7 +487,7 @@ int main(){
                                 else{
                                     cout << "You choose to go down the path towards Fool’s Creek. After all, you are on a date, so it seems only fitting to go down lover’s pass. However, you failed to consider that the other people on dates would have the exact same thought process. The trail was PACKED, and you couldn’t help but notice the copious amounts of undergarments and rubber accessories lying around everywhere. You were both kinda uncomfortable and feeling very awkward, so you both power walked down the rest of the trail without much being said." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location6Complete = true;
                                 }
                                 break;
@@ -497,7 +498,7 @@ int main(){
                                 else{
                                     cout << "You choose to go down the path towards Pico Trail. Upon starting the trail, you notice you’re not the only ones around. You both continue down the path, and have a good time. It’s populated but not that busy, and the views are very nice. You’d both prefer a trail more secluded, but y’all have a good time regardless." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location6Complete = true;
                                 }
                                 break;
@@ -534,7 +535,7 @@ int main(){
                                 else{
                                     cout << "text blurb" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location7Complete = true;
                                 }
                                 break;
@@ -545,7 +546,7 @@ int main(){
                                 else{
                                     cout << "text blurb" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location7Complete = true;
                                 }
                                 break;
@@ -556,7 +557,7 @@ int main(){
                                 else{
                                     cout << "text blurb" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location7Complete = true;
                                 }
                                 break;
@@ -593,7 +594,7 @@ int main(){
                                 else{
                                     cout << "You chose to buy 2 tickets for Morbius. You’ve heard it’s one of the critically acclaimed best films of all time, and Jared Letto’s best performance since Suicide Squad. While it wasn’t quite the #MorbiusSweep you expected, it was a nice cozy watch. Jared Letto was still pretty good." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location8Complete = true;
                                 }
                                 break;
@@ -604,7 +605,7 @@ int main(){
                                 else{
                                     cout << "You chose to buy 2 tickets for School House Rock. You remember really enjoying the movie with Jack Black, but sadly the performance didn’t hold up. You didn’t feel the kids were all that great with the instruments, and all and all it seemed hastily put together. Broadway performances must be hit or miss. You both left dissatisfied." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location8Complete = true;
                                 }
                                 break;
@@ -615,7 +616,7 @@ int main(){
                                 else{
                                     cout << "You chose to buy 2 tickets for the Spiderman Broadway show. You weren’t really sure what to expect, since it wasn’t until just now that you learned a Spiderman broadway show even existed. Nevertheless, you take the plunge and give the show a shot. To your surprise, it’s incredible! There were some really cool moments with the Spiderman actor swinging around with the ceiling cabling, and it was a very faithful recreation of Sam Rami’s Spiderman 1. What a delightful surprise." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
-                                    player1.setScore(player1.getScore() + 125*0.5); //change .5 to score multiplier of option
+                                    player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location8Complete = true;
                                 }
                                 break;
