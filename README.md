@@ -1,24 +1,29 @@
 # Pearl Street Date
 
-You're bringing your significant other to pearl street, and you have a set amount of money to spend on the date
-certain activities will cost specific amounts of money, and contribute specific amounts to the quality of the date.
-After all the money has been spent, the date ends and you get a score based on the quality of the date.
 
-(Recitation brainstorming classes)
-Player Class - class that manages budget and tally of choices
+------------------------
+HOW TO COMPILE AND RUN
+------------------------
+Compile: g++ -std=c++17 pearlStreetDate.cpp location.cpp player.cpp npc.cpp map.cpp sigother.cpp -o 
+psd
+Run: ./psd
+------------------------
+DEPENDENCIES
+------------------------
+location.h, map.h, npc.h, player.h, and sigOther.h must be in the same directory as the cpp 
+files in order to compile.
+------------------------
+SUBMISSION INFORMATION
+------------------------
+CSCI1300 Spring 2022 Project 3
+Author: Taylor Clark and Jonathan Bayley
+Recitation: 104 - Daniel Torres
+Date: April 21, 2022
+------------------------
+ABOUT THIS PROJECT
+------------------------
 
+You're bringing your significant other to pearl street, and you've got one night to have the best date ever.
+Depending on how you make your choices, you will either increse or decrease the quality of your date. Choose wisely!
+Once you've visited all of the locations, you end the game and get a final score.
 
-Game Class - handles initialization and stuff
-
-
-Building Class - event class that handles interactions with stores, restaurants, etc, giving the player options (costing money) that either contribute positively or negatively to the date
-
-    will be stored in an array in main and all references to locations will be references to this array
-
-
-NPC Class - small class that handles NPC interactions, which can give the player insights on what options are good/bad
-
-
-.3
-.6
-1
