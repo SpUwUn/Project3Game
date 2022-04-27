@@ -574,7 +574,7 @@ int main(){
                                     cout << "You do not have enough money for this option, please choose something else." << endl;
                                 }
                                 else{
-                                    cout << "text blurb" << endl;
+                                    cout << "You choose Rocky Road. Not wanting to try something new incase your date wouldn’t enjoy it, you go with something safe. Sadly, that safe option just led you to the very thing you were trying to avoid; Mid ice cream. In your shame, you tell your date that they were out of all other flavors. Considering how long you spent trying samples, your date doesn’t believe you.                                    " << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
                                     player1.setScore(player1.getScore() + 125*0.2); //change .5 to score multiplier of option
                                     location7Complete = true;
@@ -585,7 +585,7 @@ int main(){
                                     cout << "You do not have enough money for this option, please choose something else." << endl;
                                 }
                                 else{
-                                    cout << "text blurb" << endl;
+                                    cout << "You chose the Glizzy Gateau flavor. How could you not. With a name like that, it’d have to be the best got-dang ice cream you’ve ever had. And it was, your date even agrees. In Fact it was so good, you don’t even know how to describe the taste. So you don’t. You both leave very happy." << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
                                     player1.setScore(player1.getScore() + 125*1); //change .5 to score multiplier of option
                                     location7Complete = true;
@@ -596,14 +596,14 @@ int main(){
                                     cout << "You do not have enough money for this option, please choose something else." << endl;
                                 }
                                 else{
-                                    cout << "text blurb" << endl;
+                                    cout << "You chose the Reptile Razberry flavor. You assume that the reptile part isn’t an actual flavor and simply meant to rhyme with razberry, but you start to rethink that when what seems to be a small lizard tail is sticking out of the ice cream. Offput but not dissuaded, you both try the ice cream. It’s surprisingly good. Not the best ice cream you’ve ever had, but it wins props for actually not tasting terrible. You both walk out mildly happy" << endl;
                                     player1.setMoney(player1.getMoney() - 10); //change 10 to price of option
                                     player1.setScore(player1.getScore() + 125*0.6); //change .5 to score multiplier of option
                                     location7Complete = true;
                                 }
                                 break;
                             case 4:
-                                cout << "text blurb" << endl;
+                                cout << "It's closed" << endl;
                                 location7Complete = true;
                                 break;
                             default:
@@ -614,7 +614,7 @@ int main(){
                     }
                 }
                 else{
-                    cout << "text blurb" << endl; //you cant go to a location you have already been or something like that
+                    cout << "It's closed" << endl; //you cant go to a location you have already been or something like that
                 }
                 break;
             //location 8
